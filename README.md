@@ -229,6 +229,9 @@ graph TD
 
 ![interview](https://github.com/user-attachments/assets/7afc6f36-8ea4-401e-829f-d94be218db2d)
 
+<img width="795" height="505" alt="image" src="https://github.com/user-attachments/assets/249d5e77-2fec-43d9-bb6d-659adc4564db" />
+
+
 
 ---
 
