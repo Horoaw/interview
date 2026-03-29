@@ -1,0 +1,24 @@
+# Environments
+.env
+.env.*
+venv/
+env/
+conda_env/
+
+# Databases & Cache
+db/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Data
+data/raw/*.pdf
+
+# Interview Documentation (Exclusions per request)
+GEMINI.md
+process.md
+*.docx
+.~lock.*
+
+# Project specific
+requirements.txt
