@@ -227,6 +227,11 @@ graph TD
 
 ---
 
+![interview](https://github.com/user-attachments/assets/7afc6f36-8ea4-401e-829f-d94be218db2d)
+
+
+---
+
 ## 6. 快速开始
 
 1.  **环境配置**：`pip install -r requirements.txt`
