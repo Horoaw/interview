@@ -119,12 +119,67 @@ python demo.py
 
 ---
 
-##  目录结构说明
+## 🖼️ 运行结果示例 (Execution Example)
+
+```text
+--- 步骤 1: 用户意图解析 ---
+解析结果: {
+  "artifact_query": "青铜纵目面具",
+  "style": "悬疑",
+  "duration": "60秒",
+  "content_type": "短视频脚本"
+}
+
+--- 步骤 2: 资料组织 (Real Data Loading via PDF & RAG) ---
+资料包就绪: 青铜纵目面具
+检索到 4 条相关背景资料。
+
+--- 召回质量评价 (Recall Evaluation) ---
+召回评价: 评分: 0.95 | 理由: 检索资料完整覆盖了纵目面具的“柱状外突”眼球特征、蚕丛王传说及二号坑出土背景，足以支撑悬疑叙事。
+
+--- 步骤 3: 脚本生成 (Controlled Generation) ---
+生成脚本:
+------------------------------
+【标题：古蜀的凝视】
+（场景：黑暗寂静的展厅）
+旁白：三千年前，古蜀王蚕丛在鸭子河畔种下秘密 [引用1]。
+（镜头特写：面具那双极度夸张、呈柱状外突的眼球）
+旁白：这不仅是青铜的冷光，更是跨越时空的凝视。谁能解释这双“纵目”背后的神启？ [引用2]
+------------------------------
+
+--- 步骤 4: 事实提取 ---
+提取事实: {
+  "era": "商代晚期",
+  "location": "三星堆遗址二号祭祀坑",
+  "features": ["眼球柱状外突", "两耳展开"]
+}
+
+--- 步骤 5: 规则校验 (Engineering Layer) ---
+校验结果: 通过
+匹配事实: ['年代匹配: 商代晚期', '地点匹配: 三星堆遗址二号祭祀坑', '特征匹配: 眼球柱状外突']
+
+--- 步骤 6: 分镜拆解 (Storyboarding) ---
+生成分镜数量: 3
+
+--- 步骤 7: 多模态 Prompt 转换 (Visual Logic) ---
+[分镜 1 - 0-10s]
+主体: 三星堆青铜纵目面具，极度夸张的柱状眼球
+视觉提示词: Cinematic close-up of Sanxingdui Bronze Mask, exaggerated cylindrical protruding eyeballs, ancient bronze texture with green patina, mysterious atmosphere, dramatic side lighting, 8k resolution, historical suspense style --ar 16:9
+镜头运动: 缓慢推进 (Slow Zoom-in)
+
+--- 🚀 自动化生产链执行完毕 ---
+```
+
+---
+
+## 📂 目录结构说明
+
 - `src/chains/`：包含意图解析、脚本生成、事实提取、分镜拆解等核心逻辑。
 - `src/data_loader/`：封装了自研的 `RelicDataLoader` 与 `VolcEngineEmbeddings` 适配器。
 - `src/utils/`：LLM 工厂类及确定性校验规则引擎。
 - `data/`：存放原始 PDF (RAG 数据源) 与 `artifacts.json` (硬事实数据源)。
 - `db/`：ChromaDB 持久化存储。
+
 
 ---
 ## 输出示例：
